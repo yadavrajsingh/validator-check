@@ -1,0 +1,14 @@
+userResponse:
+  type: object
+  example:
+    user:
+      userId: abc789
+      username: markcrane
+  properties:
+    user:
+      type: object
+      properties:
+        userId:
+          type: string
+        username:
+          type: string
