@@ -1,0 +1,448 @@
+/users:
+  post:
+    tags:
+      - pet
+    operationId: postUser
+    produces:
+      - application/json; charset=utf-8
+    responses:
+      "201":
+        description: User created
+        schema:
+          allOf:
+            - $ref: "#/definitions/userResponse"
+            - $ref: "#/definitions/warningResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "body": [{ "userId": 123, "userName": "Mark Crane" }] }
+
+      "400":
+        description: Bad Request
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "400", "message": "Bad Request" }] }
+      "401":
+        description: Unauthorized
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "401", "message": "Unauthorized" }] }
+      "404":
+        description: Not Found
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "404", "message": "Not Found" }] }
+      "405":
+        description: Method Not Allowed
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "405", "message": "Method Not Allowed" }] }
+      "406":
+        description: Not Acceptable
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "406", "message": "Not Acceptable" }] }
+      "429":
+        description: Too Many Requests
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "429", "message": "Too Many Requests" }] }
+      "500":
+        description: Server Error
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            {
+              "errors":
+                [{ "code": "500", "message": "Internal Server Error" }],
+            }
+      "503":
+        description: Service Unavailable
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            {
+              "errors": [{ "code": "503", "message": "Service Unavailable" }],
+            }
+/users/{userId}:
+  get:
+    tags:
+      - pet
+    operationId: getUser
+    parameters:
+      - in: path
+        name: userId
+        type: string
+        required: true
+        description: "user id"
+      - in: query
+        name: limit
+        type: integer
+        required: true
+        default: 10
+        minimum: 0
+        description: "limit"
+      - in: query
+        name: offset
+        type: integer
+        required: true
+        default: 0
+        minimum: 0
+        description: "offset"
+    produces:
+      - application/json; charset=utf-8
+    responses:
+      "200":
+        description: User Response
+        schema:
+          allOf:
+            - $ref: "#/definitions/userResponse"
+            - $ref: "#/definitions/warningResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "body": [{ "userId": 123, "userName": "Mark Crane" }] }
+      "400":
+        description: Bad Request
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "400", "message": "Bad Request" }] }
+      "401":
+        description: Unauthorized
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "401", "message": "Unauthorized" }] }
+      "404":
+        description: User not found
+        schema:
+          allOf:
+            - $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "404", "message": "Not Found" }] }
+      "405":
+        description: Method Not Allowed
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "405", "message": "Method Not Allowed" }] }
+      "406":
+        description: Not Acceptable
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "406", "message": "Not Acceptable" }] }
+      "429":
+        description: Too Many Requests
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            { "errors": [{ "code": "429", "message": "Too Many Requests" }] }
+      "500":
+        description: Server Error
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            {
+              "errors":
+                [{ "code": "500", "message": "Internal Server Error" }],
+            }
+      "503":
+        description: Service Unavailable
+        schema:
+          $ref: "#/definitions/errorResponse"
+        headers:
+          access-control-allow-origin:
+            description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+            type: string
+            pattern: ^[^*]+$
+          x-txn-correlation-id:
+            description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+            type: string
+          x-api-version:
+            description: "Version of underlying API"
+            type: string
+          x-content-type-options:
+            description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+            type: string
+            pattern: ^nosniff$
+        examples:
+          application/json:
+            {
+              "errors": [{ "code": "503", "message": "Service Unavailable" }],
+            }
