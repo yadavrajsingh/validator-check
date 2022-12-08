@@ -12,20 +12,7 @@ post:
           - $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/userResponses.yaml"
           - $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/warningResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "body": [{ "userId": 123, "userName": "Mark Crane" }] }
@@ -35,20 +22,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "400", "message": "Bad Request" }] }
@@ -57,20 +31,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "401", "message": "Unauthorized" }] }
@@ -79,20 +40,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "404", "message": "Not Found" }] }
@@ -101,20 +49,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "405", "message": "Method Not Allowed" }] }
@@ -123,20 +58,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "406", "message": "Not Acceptable" }] }
@@ -145,20 +67,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           { "errors": [{ "code": "429", "message": "Too Many Requests" }] }
@@ -167,20 +76,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           {
@@ -192,20 +88,7 @@ post:
       schema:
         $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/errorResponse.yaml"
       headers:
-        access-control-allow-origin:
-          description: "Response header indicating whether the response can be shared with requesting code from the given origin"
-          type: string
-          pattern: ^[^*]+$
-        x-txn-correlation-id:
-          description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
-          type: string
-        x-api-version:
-          description: "Version of underlying API"
-          type: string
-        x-content-type-options:
-          description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
-          type: string
-          pattern: ^nosniff$
+        $ref: "https://raw.githubusercontent.com/yadavrajsingh/validator-check/schemas-check/schemas/headers.yaml"
       examples:
         application/json:
           {
