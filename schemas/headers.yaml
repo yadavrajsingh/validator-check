@@ -1,0 +1,14 @@
+access-control-allow-origin:
+  description: "Response header indicating whether the response can be shared with requesting code from the given origin"
+  type: string
+  pattern: ^[^*]+$
+x-txn-correlation-id:
+  description: "Unique identifier that is attached to requests and acts as a reference to a particular transaction"
+  type: string
+x-api-version:
+  description: "Version of underlying API"
+  type: string
+x-content-type-options:
+  description: "Marker used by the server indicating that the MIME types advertised in the Content-Type headers should not be changed"
+  type: string
+  pattern: ^nosniff$
